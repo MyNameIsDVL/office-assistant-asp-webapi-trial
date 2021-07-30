@@ -1,0 +1,18 @@
+namespace officeApi.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class addVacLimitField : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.User", "VacLimit", c => c.String());
+        }
+        
+        public override void Down()
+        {
+            DropColumn("dbo.User", "VacLimit");
+        }
+    }
+}
